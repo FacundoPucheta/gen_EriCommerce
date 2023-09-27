@@ -1,5 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
+const router = require("./routes");
 
 const server = express();
 
@@ -20,6 +21,6 @@ server.use((req, res, next) => {
 });
 
 // acces to main router
-server.use()
+server.use(router);
 
-module.exports = server;    
+module.exports = server;
