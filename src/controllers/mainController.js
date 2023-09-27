@@ -1,5 +1,7 @@
+const { defaultService } = require("../services");
+
 const getInfo = async (req, res) => {
-  const defaultMsg = "Hola, funciona";
+  await defaultService.sendMessageDefault();
   res.status(200).json(defaultMsg);
 };
 
