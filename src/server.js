@@ -1,6 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const router = require("./routes");
+const errResponse = require("./utils/");
 
 const server = express();
 
@@ -22,5 +23,11 @@ server.use((req, res, next) => {
 
 // acces to main router
 server.use(router);
+
+// error handler (4 params)
+server.use((err, res, req, next) => {
+  const { status, message } = err;
+  errResponse(res, status, message);
+});
 
 module.exports = server;

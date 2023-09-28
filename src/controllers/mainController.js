@@ -1,10 +1,11 @@
 const { defaultService } = require("../services");
+const { response, catchedAsync } = require("../utils/");
 
 const getInfo = async (req, res) => {
-  await defaultService.sendMessageDefault();
-  res.status(200).json(defaultMsg);
+  const defualtMessage = await defaultService.sendMessageDefault();
+  response(res, 200, defualtMessage);
 };
 
 module.exports = {
-  getInfo,
+  getInfo: catchedAsync(getInfo),
 };
