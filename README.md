@@ -1,4 +1,4 @@
-# __e-commerce genérico__
+# __ API for e-commerce __
 
 
 ##  _by <u>Facu</u>  =)_ 
